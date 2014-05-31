@@ -258,7 +258,7 @@ wm_get_stack(Display *dpy)
 		return 0;
 	
 	for(i = 0; i < items_read; i++)
-		l = dlist_add(l, (void*)((CARD32*)data)[i]);
+		l = dlist_add(l, (void*)((void**)data)[i]);
 	
 	XFree(data);
 	
