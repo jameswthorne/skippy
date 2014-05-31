@@ -1,0 +1,78 @@
+Skippy changelog
+
+0.5.0 -- "The two-headed monster"
+ - Properly unmap mini-windows if their client vanishes
+ - New ignoreSkipTaskbar configuration option (general section) to make
+   skippy ignore application's requests to hide from the taskbar
+ - Fix for weird condition grouping Gimp (and most likely others as well)
+ - Escape button closes the Skippy window and restores focus
+ - Restore the window stacking order after snapping windows
+ - Fixed sticky / omnipresent windows when using a GNOME WM Spec WM.
+ - Added "useNETWMFullscreen" boolean to the config's [general] section.
+   Set it to false if your WM doesn't handle _NET_WM_STATE_FULLSCREEN
+   corectly (option doesn't do anything if your WM doesn't support
+   this state)
+ - In case of Xinerama, show only windows that are at least partially visible
+   on the current head (use the new Shift modifier to show windows from all
+   heads). Shift / non-shift behaviour can be toggled in ~/.skippyrc by
+   setting the 'showAll' option to 'true' in the [xinerama] section.
+ - Added basic Xinerama support. Skippy will only show itself on head that
+   the mouse is on.
+
+0.4.1 -- "Cleaning up the goo"
+ - Tile the root pixmap, if needed
+ - Fixed strange problem.. Thanks SuperBFG7
+ - In a NETWM environment, only use _NET_WM_STATE_FULLSCREEN if it's
+   available, otherwise revert to an override redirected window
+ - Fixed some (pretty serious) logic errors
+ - Added (old) GNOME WM Spec support (works with WindowMaker now, if it was
+   compiled with gnome support)
+ - Fixed wallpaper (root pixmap) related segmentation faults
+ - Fixed segfault on startup (which was easily mistaken for being a problem
+   related to a lack of a configuration file)
+
+0.4.0 -- "Two inches short of a revolution"
+ - Warp pointer when navigating with the keyboard (updates tooltip)
+ - Probably unnoticable speed-up in tooltip render code
+ - Update when root pixmap changes
+
+0.3.9
+ - Tint and/or adjust brightness and opacity of focused / unfocused mini-windows
+ - Changed the layout of the config file
+ - Handle tooltip's height better
+ - Tooltip tries to not move beyond screen edges
+ - Fixed small bug where the text in the tooltip would get bolder and bolder
+
+0.3.5
+ - Made tooltip always follow mouse (at a comfortable distance)
+ - Fixed bug that prevented skippy to work properly on desktops other
+   than the first
+ - Show only windows in currently focused window's group when Mod1 (alt)
+   is held when pressing hotkey.
+ - Change keyboard handling (use return or space to activate a window)
+
+0.3.4.1
+ - Fixed bug in config parser
+ - Fixed bug in tooltip default value
+
+0.3.4
+ - Tooltips for mini-windows showing the window title (rendered using Xft)
+ - Fixed silly hardcoded config path
+
+0.3.3
+ - Control + activation key will re-snap all windows on the current desktop
+ - Changed Makefile to be a bit more configurable and added install target
+ - Mini-window's border is now calculated as scaled-distance * 0.25
+ - Load config from ~/.skippyrc (see bundled skippyrc-default file)
+
+0.3.2
+ - Added keyboard navigation
+
+0.3.1
+ - Update window position / size on re-map
+ - Warp pointer when unmapping skippy
+ - Focus currently selected window and warp pointer
+ - Made skippy check window type (don't show desktop & dock windows)
+
+0.3.0
+ - Rewrote skippy.py in plain C
