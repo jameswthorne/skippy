@@ -7,4 +7,4 @@ The original source code can be found at [thegraveyard.org](http://thegraveyard.
 
 One patch has been applied on top of the original source code. You can diff the commit history to see the changed file.
 
-[Step-by-step instructions to install skippy on modern Linux distrubtions](https://thornelabs.blog/posts/linux-compile-skippy-from-source.html).
+[Step-by-step instructions to install skippy on modern Linux distrubtions](https://thornelabs.net/posts/linux-compile-skippy-from-source/).
